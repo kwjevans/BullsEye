@@ -10,4 +10,15 @@
 
 @interface BullsEyeViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UISlider *slider;
+@property (nonatomic, strong) IBOutlet UILabel *targetLabel;
+
+
+- (IBAction)showAlert;
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation;
+
+- (IBAction)sliderMoved:(UISlider *)sender;
+
+
 @end
