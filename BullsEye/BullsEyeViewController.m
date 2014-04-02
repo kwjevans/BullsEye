@@ -17,10 +17,13 @@
     int currentValue;
     int targetValue;
     int score;
+    int round;
 }
 
 @synthesize slider;
 @synthesize targetLabel;
+@synthesize scoreLabel;
+@synthesize roundLabel;
 
 - (void)updateLabels
 {
@@ -28,6 +31,9 @@
     // text property
     
     self.targetLabel.text = [NSString stringWithFormat:@"%d",targetValue];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+    self.roundLabel.text = [NSString stringWithFormat:@"%d",round];
+    
 }
 
 
@@ -37,6 +43,7 @@
     targetValue = 1 + (arc4random() % 100);
     currentValue = 50;
     self.slider.value = currentValue;
+    round++;
     
 }
 
@@ -60,6 +67,8 @@
     // Dispose of any resources that can be recreated.
     self.slider = nil;
     self.targetLabel = nil;
+    self.scoreLabel = nil;
+    self.roundLabel = nil;
 }
 
 - (IBAction)showAlert
